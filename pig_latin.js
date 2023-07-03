@@ -4,6 +4,9 @@ function translatePigLatin(str) {
   if (vowels.includes(str[0])) {
     // Word starts with a vowel, add 'way' at the end
     return str + 'way';
+  } else if (!str.match(/[aeiou]/)) {
+    // Word has no vowels, add 'ay' at the end
+    return str + 'ay';
   } else {
     // Word starts with a consonant or consonant cluster
     let consonantCluster = '';
@@ -20,6 +23,7 @@ function translatePigLatin(str) {
   }
 }
 
-console.log(translatePigLatin('glove')); // Output: "oveglay"
-console.log(translatePigLatin('algorithm')); // Output: "algorithmway"
+console.log(translatePigLatin('hello')); // Output: "ellohay"
+console.log(translatePigLatin('banana')); // Output: "ananabay"
 console.log(translatePigLatin('apple')); // Output: "appleway"
+console.log(translatePigLatin('rhythm')); // Output: "rhythmay"
